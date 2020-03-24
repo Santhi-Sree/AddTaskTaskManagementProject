@@ -97,8 +97,8 @@ public class TaskRecordPage {
 
 	public  void editTask(String text) {
 
-		driver.findElement(taskNameLoc).clear();
-		driver.findElement(taskNameLoc).sendKeys(text);
+		driver.findElement(DescriptionLoc).clear();
+		driver.findElement(DescriptionLoc).sendKeys(text);
 	}
 
 	public  void clickOnSubmitButton() {

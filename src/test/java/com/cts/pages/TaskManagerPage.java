@@ -8,8 +8,6 @@ public class TaskManagerPage {
 
 	private  By AdministrationLoc = By.xpath("//img[@src='images/administration-button.gif']");
 	private  By addNewTaskLoc = By.linkText("Add New Task");
-	private  By existingTaskLoc = By.linkText("Sleep");
-	private  By taskLoc = By.linkText("Have fun");
 	private  By assinedToLoc = By.name("assign_to");
 	private  By projectLoc = By.name("project_id");
 	private  By priorityLoc = By.name("priority_id");
@@ -17,6 +15,7 @@ public class TaskManagerPage {
 	private  By typeLoc = By.name("type_id");
 	private  By searchLoc = By.name("DoSearch");
 	private  By resultLoc = By.linkText("Code with one hand.");
+	private By existingTaskLoc = By.linkText("Get armed");
 	
 	private WebDriver driver;
 	
@@ -36,7 +35,7 @@ public class TaskManagerPage {
 
 	public  void clickOnTask() {
 
-		driver.findElement(taskLoc).click();
+		driver.findElement(existingTaskLoc).click();
 	}
 
 	public  void clickOnExistingTask() {

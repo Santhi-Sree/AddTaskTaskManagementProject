@@ -17,7 +17,7 @@ Scenario Outline: Search Task
 Scenario: Access Task 
 
 	When I click on task and enter username as 'admin' and password as 'admin' 
-	Then I should get the text in Task field as 'Bored with your programming job? Get CodeCharge. Have Fun.' 
+	Then I should get the text in Task field as 'Low on ammunition? Get armed. Get CodeCharge.' 
 	
 Scenario Outline: Add Task with Valid Credentials 
 

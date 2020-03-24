@@ -127,7 +127,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I should get the text in Task field as \u0027Bored with your programming job? Get CodeCharge. Have Fun.\u0027",
+  "name": "I should get the text in Task field as \u0027Low on ammunition? Get armed. Get CodeCharge.\u0027",
   "keyword": "Then "
 });
 formatter.match({
