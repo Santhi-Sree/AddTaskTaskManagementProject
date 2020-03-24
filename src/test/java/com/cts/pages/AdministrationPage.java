@@ -7,47 +7,53 @@ import com.cts.base.LaunchWebDriver;
 
 public class AdministrationPage {
 
-	private static By addTaskIconLoc = By.xpath("//img[@src='images/add-task-button.gif']");
-	private static By taskListLoc = By.xpath("//img[@src='images/task-list-button.gif']");
-	private static By prioritiesLoc = By.xpath("//a[text()='Priorities']");
-	private static By projectsLoc = By.xpath("//a[text()='Projects']");
-	private static By statusesLoc = By.xpath("//a[text()='Statuses']");
-	private static By typesLoc = By.xpath("//a[text()='Types']");
-	private static By logoutLoc = By.linkText("Logout");
-	private static By errorTextLoc = By.xpath("//td[contains(text(),'Login or Password is incorrect.')]");
+	private By addTaskIconLoc = By.xpath("//img[@src='images/add-task-button.gif']");
+	private By taskListLoc = By.xpath("//img[@src='images/task-list-button.gif']");
+	private By prioritiesLoc = By.xpath("//a[text()='Priorities']");
+	private By projectsLoc = By.xpath("//a[text()='Projects']");
+	private By statusesLoc = By.xpath("//a[text()='Statuses']");
+	private By typesLoc = By.xpath("//a[text()='Types']");
+	private By logoutLoc = By.linkText("Logout");
+	private By errorTextLoc = By.xpath("//td[contains(text(),'Login or Password is incorrect.')]");
+	
+	private WebDriver driver;
+	
+	public AdministrationPage(WebDriver driver) {
+		this.driver = driver;
+	}
 
-	public static void clickOnAddTaskIcon(WebDriver driver) {
+	public  void clickOnAddTaskIcon() {
 
 		driver.findElement(addTaskIconLoc).click();
 
 	}
 
-	public static void clickOnTaskListIcon(WebDriver driver) {
+	public  void clickOnTaskListIcon() {
 
 		driver.findElement(taskListLoc).click();
 	}
 
-	public static void clickingPriorities(WebDriver driver) {
+	public  void clickingPriorities() {
 		driver.findElement(prioritiesLoc).click();
 	}
 
-	public static void clickingProjects(WebDriver driver) {
+	public  void clickingProjects() {
 		driver.findElement(projectsLoc).click();
 	}
 
-	public static void clickingStatuses(WebDriver driver) {
+	public  void clickingStatuses() {
 		driver.findElement(statusesLoc).click();
 	}
 
-	public static void clickingTypes(WebDriver driver) {
+	public  void clickingTypes() {
 		driver.findElement(typesLoc).click();
 	}
 
-	public static void clickOnLogout(WebDriver driver) {
+	public  void clickOnLogout() {
 		driver.findElement(logoutLoc).click();
 	}
 
-	public static String getErrorText(WebDriver driver) {
+	public  String getErrorText() {
 
 		return LaunchWebDriver.driver.findElement(errorTextLoc).getText();
 	}

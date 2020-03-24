@@ -46,7 +46,7 @@ public class LaunchWebDriver {
 
 		file.renameTo(new File("src/test/resources/screenshot" + dateStr + ".png"));
 
-		driver.quit();
+		driver.close();
 	}
 
 }

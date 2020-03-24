@@ -6,74 +6,80 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TaskManagerPage {
 
-	private static By AdministrationLoc = By.xpath("//img[@src='images/administration-button.gif']");
-	private static By addNewTaskLoc = By.linkText("Add New Task");
-	private static By existingTaskLoc = By.linkText("Sleep");
-	private static By taskLoc = By.linkText("Have fun");
-	private static By assinedToLoc = By.name("assign_to");
-	private static By projectLoc = By.name("project_id");
-	private static By priorityLoc = By.name("priority_id");
-	private static By statusLoc = By.name("status_id");
-	private static By typeLoc = By.name("type_id");
-	private static By searchLoc = By.name("DoSearch");
-	private static By resultLoc = By.linkText("Code with one hand.");
+	private  By AdministrationLoc = By.xpath("//img[@src='images/administration-button.gif']");
+	private  By addNewTaskLoc = By.linkText("Add New Task");
+	private  By existingTaskLoc = By.linkText("Sleep");
+	private  By taskLoc = By.linkText("Have fun");
+	private  By assinedToLoc = By.name("assign_to");
+	private  By projectLoc = By.name("project_id");
+	private  By priorityLoc = By.name("priority_id");
+	private  By statusLoc = By.name("status_id");
+	private  By typeLoc = By.name("type_id");
+	private  By searchLoc = By.name("DoSearch");
+	private  By resultLoc = By.linkText("Code with one hand.");
+	
+	private WebDriver driver;
+	
+	public TaskManagerPage(WebDriver driver) {
+		this.driver = driver;
+	}
 
-	public static void clickOnAdministrationIcon(WebDriver driver) {
+	public  void clickOnAdministrationIcon() {
 
 		driver.findElement(AdministrationLoc).click();
 	}
 
-	public static void clickOnaddNewTask(WebDriver driver) {
+	public  void clickOnaddNewTask() {
 
 		driver.findElement(addNewTaskLoc).click();
 	}
 
-	public static void clickOnTask(WebDriver driver) {
+	public  void clickOnTask() {
 
 		driver.findElement(taskLoc).click();
 	}
 
-	public static void clickOnExistingTask(WebDriver driver) {
+	public  void clickOnExistingTask() {
 
 		driver.findElement(existingTaskLoc).click();
 	}
 
-	public static void selectAssignedTo(WebDriver driver, String assinedTo) {
+	public  void selectAssignedTo(String assinedTo) {
 
 		Select select = new Select(driver.findElement(assinedToLoc));
 		select.selectByVisibleText(assinedTo);
 	}
 
-	public static void selectProject(WebDriver driver, String project) {
+	public  void selectProject(String project) {
 
 		Select select = new Select(driver.findElement(projectLoc));
 		select.selectByVisibleText(project);
 	}
 
-	public static void selectPriority(WebDriver driver, String priority) {
+	public  void selectPriority(String priority) {
 
 		Select select = new Select(driver.findElement(priorityLoc));
 		select.selectByVisibleText(priority);
 	}
 
-	public static void selectStatus(WebDriver driver, String status) {
+	public  void selectStatus(String status) {
 
 		Select select = new Select(driver.findElement(statusLoc));
 		select.selectByVisibleText(status);
 	}
 
-	public static void selectType(WebDriver driver, String type) {
+	public  void selectType(String type) {
 
 		Select select = new Select(driver.findElement(typeLoc));
 		select.selectByVisibleText(type);
 	}
 
-	public static void clickOnSearch(WebDriver driver) {
+	public  void clickOnSearch() {
 
 		driver.findElement(searchLoc).click();
 	}
 
-	public static String getResults(WebDriver driver) {
+	public  String getResults() {
 
 		return driver.findElement(resultLoc).getText();
 	}

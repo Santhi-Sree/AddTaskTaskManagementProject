@@ -5,32 +5,38 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-	private static By userNameLoc = By.xpath("//input[@name='login']");
-	private static By passWordLoc = By.xpath("//input[@name='password']");
-	private static By loginButtonLoc = By.xpath("//input[@name='DoLogin']");
-	private static By AdminIcon = By.xpath("//img[@src='images/administration-button.gif']");
-	private static By logOut = By.xpath("//a[contains(text(),'Logout')]");
-
-	public static void enterUserName(WebDriver driver, String username) {
+	private  By userNameLoc = By.xpath("//input[@name='login']");
+	private  By passWordLoc = By.xpath("//input[@name='password']");
+	private  By loginButtonLoc = By.xpath("//input[@name='DoLogin']");
+	private  By AdminIcon = By.xpath("//img[@src='images/administration-button.gif']");
+	private  By logOut = By.xpath("//a[contains(text(),'Logout')]");
+	
+	private WebDriver driver;
+	
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public  void enterUserName(String username) {
 
 		driver.findElement(userNameLoc).sendKeys(username);
 	}
 
-	public static void enterPassWord(WebDriver driver, String password) {
+	public  void enterPassWord(String password) {
 
 		driver.findElement(passWordLoc).sendKeys(password);
 	}
 
-	public static void clickOnLogin(WebDriver driver) {
+	public  void clickOnLogin() {
 
 		driver.findElement(loginButtonLoc).click();
 	}
 
-	public static void ClickOnAdminIcon(WebDriver driver) {
+	public  void ClickOnAdminIcon() {
 		driver.findElement(AdminIcon).click();
 	}
 
-	public static void ClickOnLogOut(WebDriver driver) {
+	public  void ClickOnLogOut() {
 		driver.findElement(logOut).click();
 	}
 

@@ -23,29 +23,35 @@ public class NewTaskAddStepDefinition {
 
 	@When("I enter data {string} {string} {string} {string} {string}")
 	public void i_enter_data(String assinedTo, String project, String priority, String status, String type) {
+		
+		TaskManagerPage manage = new TaskManagerPage(LaunchWebDriver.driver);
+		
 		// Select assigned to
-		TaskManagerPage.selectAssignedTo(LaunchWebDriver.driver, assinedTo);
+		manage.selectAssignedTo(assinedTo);
 
 		// Select Project
-		TaskManagerPage.selectProject(LaunchWebDriver.driver, project);
+		manage.selectProject(project);
 
 		// Select Priority
-		TaskManagerPage.selectPriority(LaunchWebDriver.driver, priority);
+		manage.selectPriority(priority);
 
 		// Select Status
-		TaskManagerPage.selectStatus(LaunchWebDriver.driver, status);
+		manage.selectStatus(status);
 
 		// Select Type
-		TaskManagerPage.selectType(LaunchWebDriver.driver, type);
+		manage.selectType(type);
 	}
 
 	@When("Click on search button i shoud get the results")
 	public void click_on_search_button_i_shoud_get_the_results() {
+		
+		TaskManagerPage manage = new TaskManagerPage(LaunchWebDriver.driver);
+		
 		// Click on Search
-		TaskManagerPage.clickOnSearch(LaunchWebDriver.driver);
+		manage.clickOnSearch();
 
 		// Get results into string
-		String result = TaskManagerPage.getResults(LaunchWebDriver.driver);
+		String result = manage.getResults();
 
 		// Print result
 		System.out.println(result);
@@ -68,23 +74,31 @@ public class NewTaskAddStepDefinition {
 
 	@When("I click on task and enter username as {string} and password as {string}")
 	public void i_click_on_task_and_enter_username_as_and_password_as(String username, String password) {
+		
+		TaskManagerPage manage = new TaskManagerPage(LaunchWebDriver.driver);
+		
+		LoginPage login = new LoginPage(LaunchWebDriver.driver);
+		
 		// Click on Existing task
-		TaskManagerPage.clickOnTask(LaunchWebDriver.driver);
+		manage.clickOnTask();
 
 		// Enter user name
-		LoginPage.enterUserName(LaunchWebDriver.driver, username);
+		login.enterUserName(username);
 
 		// Enter Password
-		LoginPage.enterPassWord(LaunchWebDriver.driver, password);
+		login.enterPassWord(password);
 
 		// Click on Login Button
-		LoginPage.clickOnLogin(LaunchWebDriver.driver);
+		login.clickOnLogin();
 	}
 
 	@Then("I should get the text in Task field as {string}")
 	public void i_should_get_the_text_in_Task_field_as(String text) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
+		
 		// Getting actual text from the task
-		String actualText = TaskRecordPage.getExistingText(LaunchWebDriver.driver);
+		String actualText = record.getExistingText();
 
 		// Assertion with Expected Text
 		Assert.assertEquals(text, actualText);
@@ -98,56 +112,66 @@ public class NewTaskAddStepDefinition {
 
 	@When("I click on Add Task Icon and i enter username as {string} and password as {string}")
 	public void i_click_on_Add_Task_Icon_and_i_enter_username_as_and_password_as(String username, String password) {
+		
+		LoginPage login = new LoginPage(LaunchWebDriver.driver);
+		
+		AdministrationPage admin = new AdministrationPage(LaunchWebDriver.driver);
+		
 		// Click on Add Task Icon
-		AdministrationPage.clickOnAddTaskIcon(LaunchWebDriver.driver);
+		admin.clickOnAddTaskIcon();
 
-		// Enter User name
-		LoginPage.enterUserName(LaunchWebDriver.driver, username);
+		// Enter user name
+		login.enterUserName(username);
 
 		// Enter Password
-		LoginPage.enterPassWord(LaunchWebDriver.driver, password);
+		login.enterPassWord(password);
 
-		// Click on Login button
-		LoginPage.clickOnLogin(LaunchWebDriver.driver);
+		// Click on Login Button
+		login.clickOnLogin();
 
 	}
 
 	@When("I enter data {string} {string} {string} {string} {string} {string} {string} {string} {string}")
 	public void i_enter_data(String task, String description, String project, String priority, String status,
 			String type, String assignedTo, String startDate, String finishDate) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
 
 		// Enter Task name
-		TaskRecordPage.enterTaskName(LaunchWebDriver.driver, task);
+		record.enterTaskName(task);
 
 		// Enter description of the task
-		TaskRecordPage.enterDescription(LaunchWebDriver.driver, description);
+		record.enterDescription(description);
 
 		// Select Project type
-		TaskRecordPage.selectProject(LaunchWebDriver.driver, project);
+		record.selectProject(project);
 
 		// Select Priority of the task
-		TaskRecordPage.selectPriority(LaunchWebDriver.driver, priority);
+		record.selectPriority(priority);
 
 		// Select Status of the task
-		TaskRecordPage.selectStatus(LaunchWebDriver.driver, status);
+		record.selectStatus(status);
 
 		// Select the type of the task
-		TaskRecordPage.selectType(LaunchWebDriver.driver, type);
+		record.selectType(type);
 
 		// Select the Assigned To to assign the task
-		TaskRecordPage.selectAssignedTo(LaunchWebDriver.driver, assignedTo);
+		record.selectAssignedTo(assignedTo);
 
 		// Enter Start date
-		TaskRecordPage.enterStartDate(LaunchWebDriver.driver, startDate);
+		record.enterStartDate(startDate);
 
 		// Enter Finish date
-		TaskRecordPage.enterFinishDate(LaunchWebDriver.driver, finishDate);
+		record.enterFinishDate(finishDate);
 	}
 
 	@Then("I should return to {string} page by clicking on add button")
 	public void i_should_return_to_page_by_clicking_on_add_button(String expectedtitle) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
+		
 		// Click on Add button
-		TaskRecordPage.clickOnAddButton(LaunchWebDriver.driver);
+		record.clickOnAddButton();
 
 		// Get the title of the page
 		String actualTitle = LaunchWebDriver.driver.getTitle();
@@ -165,39 +189,44 @@ public class NewTaskAddStepDefinition {
 	@When("I enter data {string} {string} {string} {string} {string} {string} {string} {string} and click on add button")
 	public void i_enter_data_and_click_on_add_button(String description, String project, String priority, String status,
 			String type, String assignedTo, String startDate, String finishDate) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
 
 		// Enter description of the task
-		TaskRecordPage.enterDescription(LaunchWebDriver.driver, description);
+		record.enterDescription(description);
 
 		// Select Project type
-		TaskRecordPage.selectProject(LaunchWebDriver.driver, project);
+		record.selectProject(project);
 
 		// Select Priority of the task
-		TaskRecordPage.selectPriority(LaunchWebDriver.driver, priority);
+		record.selectPriority(priority);
 
 		// Select Status of the task
-		TaskRecordPage.selectStatus(LaunchWebDriver.driver, status);
+		record.selectStatus(status);
 
 		// Select the type of the task
-		TaskRecordPage.selectType(LaunchWebDriver.driver, type);
+		record.selectType(type);
 
 		// Select the Assigned To to assign the task
-		TaskRecordPage.selectAssignedTo(LaunchWebDriver.driver, assignedTo);
+		record.selectAssignedTo(assignedTo);
 
 		// Enter Start date
-		TaskRecordPage.enterStartDate(LaunchWebDriver.driver, startDate);
+		record.enterStartDate(startDate);
 
 		// Enter Finish date
-		TaskRecordPage.enterFinishDate(LaunchWebDriver.driver, finishDate);
+		record.enterFinishDate(finishDate);
 
 		// Click on Add button
-		TaskRecordPage.clickOnAddButton(LaunchWebDriver.driver);
+		record.clickOnAddButton();
 	}
 
 	@Then("I should get error message as {string}")
 	public void i_should_get_error_message_as(String expectedErrorText) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
+		
 		// Get the actual text of the error
-		String actualError = TaskRecordPage.getErrorText(LaunchWebDriver.driver);
+		String actualError = record.getErrorText();
 
 		// Assertion with expected error text
 		Assert.assertEquals(expectedErrorText, actualError);
@@ -211,29 +240,40 @@ public class NewTaskAddStepDefinition {
 
 	@When("I click on existing task and i enter username as {string} and password as {string}")
 	public void i_click_on_existing_task_and_i_enter_username_as_and_password_as(String username, String password) {
+		
+		LoginPage login = new LoginPage(LaunchWebDriver.driver);
+		
+		TaskManagerPage manage = new TaskManagerPage(LaunchWebDriver.driver);
+		
 		// Click on existing task
-		TaskManagerPage.clickOnExistingTask(LaunchWebDriver.driver);
+		manage.clickOnExistingTask();
 
-		// Enter User name
-		LoginPage.enterUserName(LaunchWebDriver.driver, username);
+		// Enter user name
+		login.enterUserName(username);
 
-		// Enter password
-		LoginPage.enterPassWord(LaunchWebDriver.driver, password);
+		// Enter Password
+		login.enterPassWord(password);
 
-		// Click on Login button
-		LoginPage.clickOnLogin(LaunchWebDriver.driver);
+		// Click on Login Button
+		login.clickOnLogin();
 	}
 
 	@When("click on task and enter data {string}")
 	public void click_on_task_and_enter_data(String text) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
+		
 		// Click on description and enter data
-		TaskRecordPage.editTask(LaunchWebDriver.driver, text);
+		record.editTask(text);
 	}
 
 	@Then("I should redirect to {string} page when i  click on submit button")
 	public void i_should_redirect_to_page_when_i_click_on_submit_button(String expectedtitle) {
+		
+		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
+		
 		// Click on Submit button
-		TaskRecordPage.clickOnSubmitButton(LaunchWebDriver.driver);
+		record.clickOnSubmitButton();
 
 		// Get the actual title of page after submit button is clicked
 		String actualTitle = LaunchWebDriver.driver.getTitle();
