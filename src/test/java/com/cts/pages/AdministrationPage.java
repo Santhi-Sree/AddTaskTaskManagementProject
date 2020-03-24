@@ -13,47 +13,42 @@ public class AdministrationPage {
 	private By projectsLoc = By.xpath("//a[text()='Projects']");
 	private By statusesLoc = By.xpath("//a[text()='Statuses']");
 	private By typesLoc = By.xpath("//a[text()='Types']");
-	private By logoutLoc = By.linkText("Logout");
 	private By errorTextLoc = By.xpath("//td[contains(text(),'Login or Password is incorrect.')]");
-	
+
 	private WebDriver driver;
-	
+
 	public AdministrationPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public  void clickOnAddTaskIcon() {
+	public void clickOnAddTaskIcon() {
 
 		driver.findElement(addTaskIconLoc).click();
 
 	}
 
-	public  void clickOnTaskListIcon() {
+	public void clickOnTaskListIcon() {
 
 		driver.findElement(taskListLoc).click();
 	}
 
-	public  void clickingPriorities() {
+	public void clickingPriorities() {
 		driver.findElement(prioritiesLoc).click();
 	}
 
-	public  void clickingProjects() {
+	public void clickingProjects() {
 		driver.findElement(projectsLoc).click();
 	}
 
-	public  void clickingStatuses() {
+	public void clickingStatuses() {
 		driver.findElement(statusesLoc).click();
 	}
 
-	public  void clickingTypes() {
+	public void clickingTypes() {
 		driver.findElement(typesLoc).click();
 	}
 
-	public  void clickOnLogout() {
-		driver.findElement(logoutLoc).click();
-	}
-
-	public  String getErrorText() {
+	public String getErrorText() {
 
 		return LaunchWebDriver.driver.findElement(errorTextLoc).getText();
 	}
