@@ -8,7 +8,7 @@ Background:
 	
 Scenario Outline: Search Task 
 
-	When I enter data 'Alexander Atkinson' 'CodeCharge' 'Highest' 'Open' 'Task' 
+	When I enter data '<Alexander Atkinson>' '<CodeCharge>' '<Highest>' '<Open>' '<Task>' 
 	And Click on search button i shoud get the results 
 	Then I should access the portal with title as 'Task Manager' 
 	Examples: 
@@ -22,7 +22,7 @@ Scenario: Access Task
 Scenario Outline: Add Task with Valid Credentials 
 
 	When I click on Add Task Icon and i enter username as 'admin' and password as 'admin' 
-	And I enter data 'Testing' 'I need to test the task' 'CodeCharge' 'High' 'In progress' 'Task' 'Stan Simon' '03/14/20' '03/18/20' 
+	And I enter data '<Testing>' '<I need to test the task>' '<CodeCharge>' '<High>' '<In progress>' '<Task>' '<Stan Simon>' '<03/14/20>' '<03/18/20>' 
 	Then  I should return to 'Task Manager' page by clicking on add button 
 	Examples: 
 		|Task|Description|Project|Priority|Status|Type|Assigned To|Start Date|Finish Date|
@@ -31,7 +31,7 @@ Scenario Outline: Add Task with Valid Credentials
 Scenario Outline: Add Task with Invalid Credentials 
 
 	When I click on Add Task Icon and i enter username as 'admin' and password as 'admin' 
-	And I enter data 'I need to test the task' 'CodeCharge' 'High' 'In progress' 'Task' 'Stan Simon' '03/14/20' '03/18/20' and click on add button 
+	And I enter data '<I need to test the task>' '<CodeCharge>' '<High>' '<In progress>' '<Task>' '<Stan Simon>' '<03/14/20>' '<03/18/20>' and click on add button 
 	Then  I should get error message as 'The value in field Task is required.' 
 	Examples: 
 		|Description|Project|Priority|Status|Type|Assigned To|Start Date|Finish Date|
