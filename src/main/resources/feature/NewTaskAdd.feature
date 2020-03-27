@@ -9,36 +9,38 @@ Background:
 Scenario Outline: Search Task 
 
 	When I enter data '<Assigned To>' '<Project>' '<Priority>' '<Status>' '<Type>' 
-	And Click on search button i shoud get the results 
+	And Click on search button i should get the results 
 	Then I should access the portal with title as 'Task Manager' 
 	Examples: 
 		|Assigned To|Project|Priority|Status|Type|
 		|Alexander Atkinson|CodeCharge|Highest|Open|Task|
+		|Ken Price|Test Project|High|In progress|Task|
+		
 Scenario: Access Task 
 
-	When I click on task and enter username as 'admin' and password as 'admin' 
-	Then I should get the text in Task field as 'To code or not to code, that is the question' 
+	When I click on task and enter login details from excel 'src/test/resources/Excel/TaskManagement.xlsx' with sheetname 'ValidLoginDetails'
+	Then I should get the text in Task field as 'Low on ammunition? Get armed. Get CodeCharge.' 
 	
-Scenario Outline: Add Task with Valid Credentials 
+Scenario: Add Task with Valid Credentials 
 
-	When I click on Add Task Icon and i enter username as 'admin' and password as 'admin' 
-	And I enter data '<Task>' '<Description>' '<Project>' '<Priority>' '<Status>' '<Type>' '<Assigned To>' '<Start Date>' '<Finish Date>' 
+	When I click on Add Task Icon and enter login details from excel 'src/test/resources/Excel/TaskManagement.xlsx' with sheetname 'ValidLoginDetails'
+	And I enter data from excel 'src/test/resources/Excel/TaskManagement.xlsx' with sheetname 'ValidTaskDetails' 
 	Then  I should return to 'Task Manager' page by clicking on add button 
-	Examples: 
-		|Task|Description|Project|Priority|Status|Type|Assigned To|Start Date|Finish Date|
-		|Testing|I need to test the task|CodeCharge|High|In progress|Task|Stan Simon|03/14/20|03/18/20|
-		
+
+ 
 Scenario Outline: Add Task with Invalid Credentials 
 
-	When I click on Add Task Icon and i enter username as 'admin' and password as 'admin' 
+	When I click on Add Task Icon and enter login details from excel 'src/test/resources/Excel/TaskManagement.xlsx' with sheetname 'ValidLoginDetails' 
 	And I enter data '<Description>' '<Project>' '<Priority>' '<Status>' '<Type>' '<Assigned To>' '<Start Date>' '<Finish Date>' and click on add button 
 	Then  I should get error message as 'The value in field Task is required.' 
 	Examples: 
 		|Description|Project|Priority|Status|Type|Assigned To|Start Date|Finish Date|
 		|I need to test the task|CodeCharge|High|In progress|Task|Stan Simon|03/14/20|03/18/20|
+		|Need a break|CodeCharge|Lowest|Closed|Question|Ken Price|03/18/20|03/20/20|
+		
 Scenario: Edit Task 
 
-	When  I click on existing task and i enter username as 'admin' and password as 'admin' 
+	When  I click on existing task and enter login details from excel 'src/test/resources/Excel/TaskManagement.xlsx' with sheetname 'ValidLoginDetails' 
 	And   click on task and enter data 'Enter code' 
 	Then  I should redirect to 'Task Manager' page when i  click on submit button 
 	

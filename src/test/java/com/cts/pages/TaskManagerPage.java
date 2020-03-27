@@ -13,8 +13,9 @@ public class TaskManagerPage {
 	private By statusLoc = By.name("status_id");
 	private By typeLoc = By.name("type_id");
 	private By searchLoc = By.name("DoSearch");
-	private By resultLoc = By.linkText("Code with one hand.");
-	private By existingTaskLoc = By.linkText("Write more code");
+	private By resultLoc = By.xpath("(//table[@class='Grid']/tbody/tr[2]/td)[1]");
+	private By existingTaskLoc = By.linkText("Get armed");
+	private By taskLoc = By.linkText("Fix ALL bugs");
 
 	private WebDriver driver;
 
@@ -34,7 +35,7 @@ public class TaskManagerPage {
 
 	public void clickOnExistingTask() {
 
-		driver.findElement(existingTaskLoc).click();
+		driver.findElement(taskLoc).click();
 	}
 
 	public void selectAssignedTo(String assinedTo) {
