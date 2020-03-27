@@ -37,20 +37,20 @@ formatter.examples({
     },
     {
       "cells": [
-        "Alexander Atkinson",
+        "Peter Larsen",
         "CodeCharge",
-        "Highest",
-        "Open",
+        "High",
+        "Closed",
         "Task"
       ]
     },
     {
       "cells": [
-        "Ken Price",
-        "Test Project",
+        "Helen Deering",
+        "CodeCharge",
         "High",
-        "In progress",
-        "Task"
+        "On hold",
+        "Issue"
       ]
     }
   ]
@@ -76,7 +76,7 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "I enter data \u0027Alexander Atkinson\u0027 \u0027CodeCharge\u0027 \u0027Highest\u0027 \u0027Open\u0027 \u0027Task\u0027",
+  "name": "I enter data \u0027Peter Larsen\u0027 \u0027CodeCharge\u0027 \u0027High\u0027 \u0027Closed\u0027 \u0027Task\u0027",
   "keyword": "When "
 });
 formatter.match({
@@ -126,7 +126,7 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "I enter data \u0027Ken Price\u0027 \u0027Test Project\u0027 \u0027High\u0027 \u0027In progress\u0027 \u0027Task\u0027",
+  "name": "I enter data \u0027Helen Deering\u0027 \u0027CodeCharge\u0027 \u0027High\u0027 \u0027On hold\u0027 \u0027Issue\u0027",
   "keyword": "When "
 });
 formatter.match({

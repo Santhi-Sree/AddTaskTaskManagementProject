@@ -85,8 +85,7 @@ public class NewTaskAddStepDefinition {
 		LoginPage login = new LoginPage(LaunchWebDriver.driver);
 
 		// Reading from Excel
-		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/TaskManagement.xlsx",
-				"ValidLoginDetails");
+		String str[][] = ReadExcel.getSheetIntoStringArray(fileDetails,sheetName);
 
 		// Click on Existing task
 		manage.clickOnTask();
@@ -128,8 +127,7 @@ public class NewTaskAddStepDefinition {
 		AdministrationPage admin = new AdministrationPage(LaunchWebDriver.driver);
 
 		// Reading from Excel
-		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/TaskManagement.xlsx",
-				"ValidLoginDetails");
+		String str[][] = ReadExcel.getSheetIntoStringArray(fileDetails,sheetName);
 
 		// Click on Add Task Icon
 		admin.clickOnAddTaskIcon();
@@ -151,8 +149,7 @@ public class NewTaskAddStepDefinition {
 		TaskRecordPage record = new TaskRecordPage(LaunchWebDriver.driver);
 
 		// Reading from Excel
-		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/TaskManagement.xlsx",
-				"ValidTaskDetails");
+		String str[][] = ReadExcel.getSheetIntoStringArray(fileDetails,sheetName);
 
 		// Enter Task name
 		record.enterTaskName(str[0][0]);
@@ -256,16 +253,15 @@ public class NewTaskAddStepDefinition {
 	}
 
 	@When("I click on existing task and enter login details from excel {string} with sheetname {string}")
-	public void i_click_on_existing_task_and_enter_login_details_from_excel_with_sheetname(String string,
-			String string2) throws IOException {
+	public void i_click_on_existing_task_and_enter_login_details_from_excel_with_sheetname(String fileDetails,
+			String sheetName) throws IOException {
 
 		LoginPage login = new LoginPage(LaunchWebDriver.driver);
 
 		TaskManagerPage manage = new TaskManagerPage(LaunchWebDriver.driver);
 
 		// Reading from Excel
-		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/TaskManagement.xlsx",
-				"ValidLoginDetails");
+		String str[][] = ReadExcel.getSheetIntoStringArray(fileDetails,sheetName);
 
 		// Click on existing task
 		manage.clickOnExistingTask();

@@ -13,8 +13,8 @@ Scenario Outline: Search Task
 	Then I should access the portal with title as 'Task Manager' 
 	Examples: 
 		|Assigned To|Project|Priority|Status|Type|
-		|Alexander Atkinson|CodeCharge|Highest|Open|Task|
-		|Ken Price|Test Project|High|In progress|Task|
+		|Peter Larsen|CodeCharge|High|Closed|Task|
+		|Helen Deering|CodeCharge|High|On hold|Issue|
 		
 Scenario: Access Task 
 
