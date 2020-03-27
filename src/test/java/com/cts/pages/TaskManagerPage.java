@@ -14,7 +14,7 @@ public class TaskManagerPage {
 	private By typeLoc = By.name("type_id");
 	private By searchLoc = By.name("DoSearch");
 	private By resultLoc = By.linkText("Code with one hand.");
-	private By existingTaskLoc = By.linkText("Get armed");
+	private By existingTaskLoc = By.linkText("Write more code");
 
 	private WebDriver driver;
 

@@ -10,7 +10,7 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "I enter data \u0027Alexander Atkinson\u0027 \u0027CodeCharge\u0027 \u0027Highest\u0027 \u0027Open\u0027 \u0027Task\u0027",
+  "name": "I enter data \u0027\u003cAssigned To\u003e\u0027 \u0027\u003cProject\u003e\u0027 \u0027\u003cPriority\u003e\u0027 \u0027\u003cStatus\u003e\u0027 \u0027\u003cType\u003e\u0027",
   "keyword": "When "
 });
 formatter.step({
@@ -127,7 +127,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I should get the text in Task field as \u0027Low on ammunition? Get armed. Get CodeCharge.\u0027",
+  "name": "I should get the text in Task field as \u0027To code or not to code, that is the question\u0027",
   "keyword": "Then "
 });
 formatter.match({
@@ -146,7 +146,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.step({
-  "name": "I enter data \u0027Testing\u0027 \u0027I need to test the task\u0027 \u0027CodeCharge\u0027 \u0027High\u0027 \u0027In progress\u0027 \u0027Task\u0027 \u0027Stan Simon\u0027 \u002703/14/20\u0027 \u002703/18/20\u0027",
+  "name": "I enter data \u0027\u003cTask\u003e\u0027 \u0027\u003cDescription\u003e\u0027 \u0027\u003cProject\u003e\u0027 \u0027\u003cPriority\u003e\u0027 \u0027\u003cStatus\u003e\u0027 \u0027\u003cType\u003e\u0027 \u0027\u003cAssigned To\u003e\u0027 \u0027\u003cStart Date\u003e\u0027 \u0027\u003cFinish Date\u003e\u0027",
   "keyword": "And "
 });
 formatter.step({
@@ -246,7 +246,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.step({
-  "name": "I enter data \u0027I need to test the task\u0027 \u0027CodeCharge\u0027 \u0027High\u0027 \u0027In progress\u0027 \u0027Task\u0027 \u0027Stan Simon\u0027 \u002703/14/20\u0027 \u002703/18/20\u0027 and click on add button",
+  "name": "I enter data \u0027\u003cDescription\u003e\u0027 \u0027\u003cProject\u003e\u0027 \u0027\u003cPriority\u003e\u0027 \u0027\u003cStatus\u003e\u0027 \u0027\u003cType\u003e\u0027 \u0027\u003cAssigned To\u003e\u0027 \u0027\u003cStart Date\u003e\u0027 \u0027\u003cFinish Date\u003e\u0027 and click on add button",
   "keyword": "And "
 });
 formatter.step({
